@@ -1,0 +1,19 @@
+{
+  "name": "boot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "vite serve",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.63.6",
+    "vite": "^4.3.9"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.0"
+  }
+}
