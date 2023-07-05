@@ -1,0 +1,68 @@
+@import "./variables";
+@import "./mixins/grid";
+@import "./mixins/grid-framework";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.container-base {
+  @include make-container();
+  max-width: map-get($container-max-widths, default);
+}
+
+.container-fluid {
+  @include make-container();
+}
+
+.aem-Grid {
+  @include make-row();
+}
+
+.aem-Grid > * {
+  @include make-col-ready();
+}
+
+@include make-grid-columns();
+
+@include use-desktop() {
+  .aem-GridColumn--default--hide {
+    display: none;
+  }
+
+  .aem-GridColumn--default--newline {
+    flex: 0 0 100%;
+    margin-left: 0;
+    margin-right: 0;
+    max-width: 100%;
+  }
+}
+
+@include use-from-till-breakpoint(map-get($grid-breakpoints, phone), map-get($grid-breakpoints, tablet)) {
+  .aem-GridColumn--tablet--hide {
+    display: none;
+  }
+
+  .aem-GridColumn--tablet--newline {
+    flex: 0 0 100%;
+    margin-left: 0;
+    margin-right: 0;
+    max-width: 100%;
+  }
+}
+
+@include use-mobile() {
+  .aem-GridColumn--phone--hide {
+    display: none;
+  }
+
+  .aem-GridColumn--phone--newline {
+    flex: 0 0 100%;
+    margin-left: 0;
+    margin-right: 0;
+    max-width: 100%;
+  }
+}
+
