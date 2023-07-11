@@ -6,7 +6,7 @@
 }
 
 @function breakpoint-infix($name, $breakpoints: $grid-breakpoints) {
-  @return if(breakpoint-min($name, $breakpoints) == null, "", "--#{$name}");
+  @return if(breakpoint-min($name, $breakpoints) == null, "", "#{$name}");
 }
 
 @mixin media-breakpoint-up($name, $breakpoints: $grid-breakpoints) {
@@ -20,19 +20,19 @@
   }
 }
 
-@mixin use-desktop($screen: map-get($grid-breakpoints, tablet)) {
+@mixin use-only-desktop($screen: map-get($grid-breakpoints, phone)) { //replace phone with tablet if a breakpoint appears tablet 992
   @media (min-width: $screen + 1) {
     @content;
   }
 }
 
-@mixin use-from-till-breakpoint($screen-from, $screen-till) {
-  @media  (min-width: $screen-from  + 1) and (max-width: $screen-till)  {
-    @content;
-  }
-}
+//@mixin use-only-tablet($screen-from, $screen-till) {
+//  @media  (min-width: $screen-from  + 1) and (max-width: $screen-till) { //uncomment if breakpoint appears tablet 992
+//    @content;
+//  }
+//}
 
-@mixin use-mobile($screen: map-get($grid-breakpoints, phone)) {
+@mixin use-only-mobile($screen: map-get($grid-breakpoints, phone)) {
   @media (max-width: $screen) {
     @content;
   }

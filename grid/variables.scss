@@ -1,15 +1,11 @@
 
 $grid-breakpoints: (
         default: 1280px,
-        tablet: 992px,
+        //tablet: 992px, // uncomment if necessary
         phone: 768px,
 ) !default;
 
-$container-max-widths: (
-        default: 1280px,
-        tablet: 992px,
-        phone: 768px,
-) !default;
+$container-max-width: 1280px;
 
 $grid-columns:                12 !default;
 $grid-gutter-width:           30px !default;
